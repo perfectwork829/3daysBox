@@ -36,8 +36,7 @@ jobs:
           script: |
             cd /home/public_html
             rm -rf *
-            chmod 777 /dist/3days_latest -R
-            cp -r /dist/3days_latest/. .
+            cp -r dist/3days_latest/. .
 
       - name: Restart Nginx
         uses: appleboy/ssh-action@master
