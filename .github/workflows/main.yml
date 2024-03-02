@@ -37,7 +37,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
           source: "dist/3days_latest/*"
           target: "/home/public_html"
@@ -47,6 +47,6 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
           script: sudo systemctl restart nginx
