@@ -1,0 +1,48 @@
+<!--== Start Package Area Wrapper ==-->
+<app-spinner></app-spinner>
+<section id="packages-section" class="pricing-area pricing-default-area packages">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title text-center mb-0" data-aos="fade-up" data-aos-duration="1000">
+          <h2 class="title text-upper">{{'Personal_Training' | translate}}<span class="text-gray">{{' & ' | translate}}</span><span>{{'MEMBERSHIPS' | translate}}</span></h2>
+        </div>
+      </div>      
+    </div>
+    <div class="row justify-content-center">        
+      <div class="col-1 position-relative slider-button">
+        <div class="swiper-button-next next-slide position-absolute " ngClass="{'swiper-button-next next-slide': bLangFlag, 'swiper-button-prev prev-slide': !bLangFlag }" (click)="plusSlides()"></div>
+      </div>      
+      <div class="col-10">                     
+        <div class="swiper-container personalTraining-member-slider-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let membership of memberships">
+              <div class="pricing-item">
+                <div class="pricing-title">
+                  <h5>{{config.isArabic? membership.main_title : membership.main_title | translate}} {{' '}} ({{ membership.session + ' sessions'}})</h5>
+                  <h2 class="sub_title_membership">{{membership.sub_title | translate}}</h2>
+                </div>
+                <div class="pricing-amount">
+                  <h2>{{membership.price}}{{' '}}{{'SAR' | translate}}</h2>                                    
+                  <h4>{{ membership.week + 'Days Per Week / ' +  membership.period + (membership.period > 1 ? ' MONTHS' : ' MONTH') | translate}}</h4>
+                </div>                
+                <div class="pricing-footer" *ngIf="membership.type === 'subscription'">
+                  <a class="btn btn-subscribe">{{'SUBSCRIBE NOW' | translate}}</a>
+                </div>
+                
+                <div class="pricing-footer">
+                  <a class="btn btn-subscribe" (click) = onViewMembership(membership) >{{'Read more' | translate}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Add the navigation buttons -->            				  
+        </div>
+      </div>
+      <div class="col-1 position-relative slider-button">
+        <div class="swiper-button-next next-slide position-absolute " ngClass="{'swiper-button-prev prev-slide': bLangFlag, 'swiper-button-next next-slide': !bLangFlag }" (click)="plusSlides()"></div>
+      </div>                  
+    </div>
+  </div>
+</section>
+<!--== End Package Area Wrapper ==-->

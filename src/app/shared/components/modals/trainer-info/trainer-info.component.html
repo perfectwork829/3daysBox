@@ -1,0 +1,83 @@
+<!--== Start Referral Code modal ==-->
+<div class="modal-header">
+    <h4 class="modal-title text-primary">
+      <img class="logo-main" src="assets/img/logo.svg" alt="Logo" />
+    </h4>
+    <button type="button" class="btn btn-danger" (click)="onClose()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <div class="modal-body trainer-info-modal">
+    <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-md-12">
+                <h3 class="dark-color text-center m-0">{{trainer_info.name}}-{{referral_code}}</h3>
+                <h6 class="theme-color lead text-center mb-3">{{trainer_info.role}}</h6>
+            </div>
+        </div>
+        <div class="row align-items-center flex-row-reverse trainer-info-container">
+            <div class="col-lg-8">
+                <div class="about-text go-to">                    
+                    <p>{{trainer_info.description}}</p>
+                    <div class="row about-list">
+                        <div class="col-md-6" *ngFor="let certification of trainer_info.certificates">
+                            <div class="media">
+                                <label>{{certification}}</label>
+                            </div>                                                   
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0">
+                <div class="about-avatar">
+                    <img src="{{trainer_info.photo}}" title="" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- <div class="counter">
+            <div class="row">
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2" data-to="500" data-speed="500">500</h6>
+                        <p class="m-0px font-w-600">Happy Customers</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2" data-to="150" data-speed="150">150</h6>
+                        <p class="m-0px font-w-600">Session Completed</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2" data-to="10" data-speed="10">10</h6>
+                        <p class="m-0px font-w-600">Programs</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <div class="count-data text-center">
+                        <h6 class="count h2" data-to="190" data-speed="190">190</h6>
+                        <p class="m-0px font-w-600">Telephonic Talk</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-12 justify-content-center d-flex align-items-center gap-5">
+                <div class="form-group text-center">
+                    <button class="btn btn-theme" (click)="doCall('https://wa.me/966920012527?text=Hello%20there')" title="Call to the trainer">
+                        {{'Call' | translate}}
+                    </button>
+                </div>
+                <div class="btn-play-box">
+                    <a data-fancybox="play-video-popup" href="{{trainer_info.intro_url}}" class="btn-play" title="Introduction video">
+                        <img src="assets/img/icons/play-btn1.png" alt="Image">
+                        <span>INTRO VIDEO</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!--== End Referral Code modal ==-->

@@ -1,0 +1,48 @@
+<!--== Start Testimonial Area Wrapper ==--> 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section-title text-center" data-aos="fade-up" data-aos-duration="1000">
+              <h2 class="title"><span>{{'Client Of The Month Will Be Displayed' | translate}}</span></h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center">  
+        <div class="col-1 position-relative slider-button" *ngIf="bLangFlag" >
+            <div class="swiper-button-next next-slide position-absolute "  (click)="plusSlides()"></div>
+        </div>
+        <div class="col-1 position-relative slider-button" *ngIf="!bLangFlag" >
+            <div class="swiper-button-prev prev-slide position-absolute"  (click)="plusSlides()"></div>
+        </div>
+        <div class="col-10">           
+            <div class="swiper-container testimonial-slider-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let item of carouselItems">
+                    <div class="pricing-item" (click)="onProductSelected.emit(product)">
+                        <div class="pricing-title">
+                        <h5>{{config.isArabic? item.customer_name : item.customer_name}}</h5>
+                        </div>
+                        <div class="custom_img">
+                        <img src="{{item.custom_img}}" alt="customer image">
+                        </div>
+                        <div class="pricing-amount">
+                        <h2>{{item.exclamation_title}}</h2>
+                        <h3>{{item.description}}</h3>
+                        </div>                      
+                    </div>
+                    </div>
+                </div>
+                <!-- Add the navigation buttons -->            				  
+            </div>
+        </div>    
+        <div class="col-1 position-relative slider-button" *ngIf="bLangFlag" >
+            <div class="swiper-button-prev prev-slide position-absolute "  (click)="previewSlides()"></div>
+        </div>      
+        <div class="col-1 position-relative slider-button" *ngIf="!bLangFlag" >
+            <div class="swiper-button-next next-slide position-absolute "  (click)="previewSlides()"></div>
+        </div>
+    </div>
+</div>
+<!--== End Testimonial Area Wrapper ==-->

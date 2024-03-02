@@ -1,0 +1,12 @@
+<main class="main-content">    
+  <app-slider [page]="'home'" [image]="'url(assets/img/slider/home1.jpg)'" [config]="config"></app-slider>  
+  <app-menu-slider></app-menu-slider>
+  <app-about-us [config]="config"></app-about-us>    
+  <app-packages [config]="config" [subscriptions]="subscriptions" *ngIf="subscriptions?.length" (onSelectGender)="onFetchProducts($event)" (onProductSelected)="onBuyProduct($event)"></app-packages>
+  <!-- <app-personal-training-membership [config]="config" [memberships]="memberships"></app-personal-training-membership> -->
+  <app-trainers [config]="config" [trainers]="trainers" *ngIf="trainers?.length"></app-trainers>
+  <app-programs [config]="config" [programs]="programs" [section]="'classes'" [page]="'home'" (onSelectGender)="onFetchPrograms($event)"></app-programs>
+  <!-- <app-testimonial-slider [config]="config" [carouselItems]="carouselItems"></app-testimonial-slider> -->
+  <app-partners [config]="config" [partners]="partners"></app-partners>
+  <app-google-map [config]="config"></app-google-map>  
+</main>

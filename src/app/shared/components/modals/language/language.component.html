@@ -1,0 +1,44 @@
+<!--== Start Language modal ==-->
+<div class="modal-header">
+  <h4 class="modal-title text-primary">
+    <img class="logo-main" src="assets/img/logo.svg" alt="Logo" />
+  </h4>
+  <button type="button" class="btn btn-danger" (click)="onClose()" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+    <div class="account-login-area p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 m-auto">
+            <div class="login-bottom">
+              <div class="login-form-content tab-content">
+                <div class="tab-pane fade show active">
+                  <div class="login-form">
+                    <div class="login-form-wrapper">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4 class="text-center">{{'Select Language' | translate}}</h4>
+                        </div>
+                      </div>
+                      <div class="row mt-3">
+                        <div class="col-md-12 mb-2" *ngFor="let language of config.availableLanguages">
+                          <div class="card btn-language" (click)="onClose(language)" [ngClass]="{'bg-primary': language.code === config.selectedLanguage?.code, 'btn-language': language.code != config.selectedLanguage?.code}">
+                            <div class="card-body text-center">
+                              <p class="font-size-16" [ngClass]="{'text-light ': language.code === config.selectedLanguage?.code}">{{language.name}}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--== End Language modal ==-->

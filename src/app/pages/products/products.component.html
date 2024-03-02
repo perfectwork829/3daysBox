@@ -1,0 +1,7 @@
+<main class="main-content">  
+  <app-spinner></app-spinner>
+  <app-product-item [config]="config" [subscriptions]="subscriptions" 
+  [personalTrainings]="personalTrainings" (onSubscriptionSelected)="onBuyProduct($event)"
+  (onSelectGender)="onFetchProducts($event)">
+</app-product-item>  
+</main>

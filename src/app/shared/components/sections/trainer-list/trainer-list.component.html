@@ -1,0 +1,30 @@
+<!--CDN End Here-->
+<div class="container">
+  <app-spinner></app-spinner>
+  <div class="row trainer-row">
+    <div class="col-sm-6 col-md-4 trainer-col" *ngFor="let trainer of trainers">
+        <div class="text-center card-box">
+            <div class="member-card pt-2 pb-2">
+                <div class="thumb-lg member-thumb mx-auto"><img src="{{trainer.image}}" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                <div class="mt-4 mb-2">
+                    <h4 class="m-0">{{trainer.name}}</h4>
+                    <p class="">{{trainer.training}}</p>
+                </div>
+                <div class="description">
+                    <p>
+                        I trained services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions
+                    </p>
+                </div>
+                <!-- <ul class="social-links list-inline mt-3">
+                    <li class="list-inline-item">                        
+                        <a data-fancybox="play-video-popup" href="../../../../../assets/img/team/AZARIAS.mp4" class="fa fa-video-camera" title="introuduction video"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a data-fancybox="view-photo-popup" class="fa fa-picture-o" title="trainer profile" href="../../../../../assets/img/team/alrege.jpg"></a>
+                    </li>                                
+                </ul>                 -->
+            </div>
+        </div>
+    </div> 
+  </div>
+</div>

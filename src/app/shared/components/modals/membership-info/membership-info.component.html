@@ -1,0 +1,92 @@
+<!--== Start Referral Code modal ==-->
+<div class="modal-header">
+    <h4 class="modal-title text-primary">
+      <img class="logo-main" src="assets/img/logo.svg" alt="Logo" />
+    </h4>
+    <button type="button" class="btn btn-danger" (click)="onClose()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  
+  <div class="modal-body membership-modal">
+    <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-lg-12">
+                <div class="section-title membership-container">
+                    <div class="about-text go-to">
+                        <p class="main-title">{{'INDIVIDUAL PERSONAL TRAINING PACKAGES' | translate }}-{{'60 minutes' | translate }}</p>
+                        <!-- <h2 class="title text-black text-center"><span>COMMITMENT Package – 3 x Per week with a COACH</span></h2> -->
+                        <!-- <div class="membership-price">
+                            <h4>3600.00 {{'SAR' | translate}}</h4>                                    
+                            <h5>{{ 3 + 'Days Per Week / ' +  2 + (2 > 1 ? ' MONTHS' : ' MONTH') | translate}}</h5>
+                        </div>                 -->
+                        <h2 class="u-container white_color">
+                            LEARNERS PACKAGE
+                        </h2>
+                        <div class="row">
+                            <div class="col-md-5 package-container">
+                                <div class="">                                    
+                                    <p class="white_color m-0 sub-package-title">12 SESSIONS - <br/> 3 DAYS / PER WEEK</p>
+                                    <div class="white-border"></div>
+                                    <p class="white_color mt-1 mb-1">Includes:</p>
+                                    <ul class="package_list">
+                                        <li>
+                                            <div class="u-list-icon u-list-icon-1">
+                                                <svg class="u-svg-content" viewBox="0 0 408.576 408.576" x="0px" y="0px" id="svg-f6f9"><g><g><path d="M204.288,0C91.648,0,0,91.648,0,204.288s91.648,204.288,204.288,204.288s204.288-91.648,204.288-204.288    S316.928,0,204.288,0z M318.464,150.528l-130.56,129.536c-7.68,7.68-19.968,8.192-28.16,0.512L90.624,217.6    c-8.192-7.68-8.704-20.48-1.536-28.672c7.68-8.192,20.48-8.704,28.672-1.024l54.784,50.176L289.28,121.344    c8.192-8.192,20.992-8.192,29.184,0C326.656,129.536,326.656,142.336,318.464,150.528z"></path></g></g></svg>                                        
+                                            </div>
+                                            12 sessions
+                                        </li>
+                                        <li>
+                                            <div class="u-list-icon u-list-icon-1">
+                                                <svg class="u-svg-content" viewBox="0 0 408.576 408.576" x="0px" y="0px" id="svg-f6f9"><g><g><path d="M204.288,0C91.648,0,0,91.648,0,204.288s91.648,204.288,204.288,204.288s204.288-91.648,204.288-204.288    S316.928,0,204.288,0z M318.464,150.528l-130.56,129.536c-7.68,7.68-19.968,8.192-28.16,0.512L90.624,217.6    c-8.192-7.68-8.704-20.48-1.536-28.672c7.68-8.192,20.48-8.704,28.672-1.024l54.784,50.176L289.28,121.344    c8.192-8.192,20.992-8.192,29.184,0C326.656,129.536,326.656,142.336,318.464,150.528z"></path></g></g></svg>                                        
+                                            </div>
+                                            SAR.3600.00/1 Month
+                                        </li>
+                                        <li>
+                                            <div class="u-list-icon u-list-icon-1">
+                                                <svg class="u-svg-content" viewBox="0 0 408.576 408.576" x="0px" y="0px" id="svg-f6f9"><g><g><path d="M204.288,0C91.648,0,0,91.648,0,204.288s91.648,204.288,204.288,204.288s204.288-91.648,204.288-204.288    S316.928,0,204.288,0z M318.464,150.528l-130.56,129.536c-7.68,7.68-19.968,8.192-28.16,0.512L90.624,217.6    c-8.192-7.68-8.704-20.48-1.536-28.672c7.68-8.192,20.48-8.704,28.672-1.024l54.784,50.176L289.28,121.344    c8.192-8.192,20.992-8.192,29.184,0C326.656,129.536,326.656,142.336,318.464,150.528z"></path></g></g></svg>                                        
+                                            </div>
+                                            3 Days per Week
+                                        </li>
+                                        <li>
+                                            <div class="u-list-icon u-list-icon-1">
+                                                <svg class="u-svg-content" viewBox="0 0 408.576 408.576" x="0px" y="0px" id="svg-f6f9"><g><g><path d="M204.288,0C91.648,0,0,91.648,0,204.288s91.648,204.288,204.288,204.288s204.288-91.648,204.288-204.288    S316.928,0,204.288,0z M318.464,150.528l-130.56,129.536c-7.68,7.68-19.968,8.192-28.16,0.512L90.624,217.6    c-8.192-7.68-8.704-20.48-1.536-28.672c7.68-8.192,20.48-8.704,28.672-1.024l54.784,50.176L289.28,121.344    c8.192-8.192,20.992-8.192,29.184,0C326.656,129.536,326.656,142.336,318.464,150.528z"></path></g></g></svg>                                        
+                                            </div>
+                                            NON – MEMBER/MEMBER
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-7 border-yellow">
+                                <div class="description">
+                                    <p class="">
+                                        Learning Package is 3x weekly with a COACH and 3 days of self directed workouts. This package is based on giving our Coaches
+                                        the time needed to teach you more about yourself, the Fitness, 
+                                        and lifestyle behaviours. Again 3 hours is a little bit of time, but 
+                                        an extra hour to talk about your training and your lifestyle habits.
+                                    </p>
+                                    <p class="">
+                                        It's a fantastic starting point for someone who's dabbled in the 
+                                        Fitness atmosphere for quite some time but wants to learn more 
+                                        about their body, nutrition, lifestyle factors, and of course, having 
+                                        a laid-out program. At this point, we know you're getting a good 
+                                        workout for 3 days per week and that you're confident in 
+                                        completing your self-directed workouts.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>                                                
+                    </div>
+                </div>
+            </div>           
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-12 justify-content-center d-flex">
+                <div class="form-group text-center">
+                    <button class="btn btn-back" (click)="onClose()">{{'Close' | translate}}</button>
+                </div>
+            </div>
+        </div> -->
+    </div>
+  </div>
+  <!--== End Referral Code modal ==-->

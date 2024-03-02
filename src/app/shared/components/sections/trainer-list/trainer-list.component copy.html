@@ -1,0 +1,28 @@
+<!--CDN End Here-->
+<div class="container">
+  <app-spinner></app-spinner>
+  <div class="row trainer-row">
+    <div class="col-sm-6 col-md-4 trainer-col" *ngFor="let trainer of trainers">
+      <div class="profile-panel">
+        <div class="profile-img">
+          <img src="{{trainer.image}}" alt="Team Image" />
+        </div>
+        <div class="profile-content">
+          <h2 class="title">{{trainer.name}} <span>{{trainer.training}}</span>
+          </h2>
+          <ul class="social-link">
+            <li>
+                <a data-fancybox="play-video-popup" href="../../../../../assets/img/team/AZARIAS.mp4" class="fa fa-video-camera" title="introuduction video"></a>
+            </li>
+            <li>
+                <a data-fancybox="view-photo-popup" class="fa fa-picture-o" title="trainer profile" href="../../../../../assets/img/team/alrege.jpg"></a>
+            </li>            
+            <li>
+                <a class="fa fa-address-card" title="you can see the trainer's info in more detail" (click)="onViewTrainer()"></a>
+            </li>            
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>

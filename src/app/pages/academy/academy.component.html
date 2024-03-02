@@ -1,0 +1,6 @@
+<main class="main-content">  
+  <app-slider [page]="'academy'" [image]="'url(assets/img/slider/mobile2.jpg)'" [config]="config"></app-slider>  
+  <app-kids-academy [config]="config"></app-kids-academy>
+  <!-- <app-packages [config]="config" [subscriptions]="subscriptions" *ngIf="subscriptions?.length" (onProductSelected)="onBuyProduct($event)" (onSelectGender)="onFetchProducts($event)"></app-packages> -->  
+  <app-academy-branches [section]="'branches'" [page]="'academy'" [config]="config" [branches]="branches" (onBranchSelected)="onBuyBranch($event)"  (onSelectGender)="onFetchPrograms($event)"></app-academy-branches>   
+</main>
