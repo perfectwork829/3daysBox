@@ -35,8 +35,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /home/public_html
-            rm -rf *            
-            chmod 755 dist/3days_latest -R
+            rm -rf *
 
       - name: Restart Nginx
         uses: appleboy/ssh-action@master
