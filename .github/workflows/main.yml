@@ -33,20 +33,21 @@ jobs:
       - run: echo secrets.PORT
 
       - name: Copy Files to Server
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST1 }}
-          username: ${{ secrets.USERNAME2 }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          source: "dist/3days_latest/*"
-          target: "/home/public_html"
-
-      - name: Restart Nginx
-        uses: appleboy/scp-action@master
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
+          script: |
+            cd /home/public_html
+            rm -rf *
+            cp -r dist/3days_latest/* .
+            chmod 755
+
+      - name: Restart Nginx
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
           script: sudo systemctl restart nginx
