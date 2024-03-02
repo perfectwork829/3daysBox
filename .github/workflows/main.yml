@@ -35,8 +35,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /home/public_html
-            rm -rf *
-            cp -r dist/3days_latest/* .
+            rm -rf *            
             chmod 755 dist/3days_latest -R
 
       - name: Restart Nginx
