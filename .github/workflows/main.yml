@@ -29,14 +29,14 @@ jobs:
 
       - name: Copy Files to Server
         run: echo "Copying Files to Server..." + ${{secrets.HOST}} + '===' + ${{secrets.USERNAME}} + '==' + ${{secrets.PASSWORD}}
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{secrets.HOST}}
-          username: ${{secrets.USERNAME}}
-          password: ${{secrets.PASSWORD}}
-          port: ${{secrets.PORT}}
-          source: "dist/3days_latest/*"
-          target: "/home/public_html"
+          uses: appleboy/scp-action@master
+          with:
+            host: ${{secrets.HOST}}
+            username: ${{secrets.USERNAME}}
+            password: ${{secrets.PASSWORD}}
+            port: ${{secrets.PORT}}
+            source: "dist/3days_latest/*"
+            target: "/home/public_html"
 
       - name: Restart Nginx
         uses: appleboy/ssh-action@master
