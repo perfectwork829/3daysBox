@@ -28,18 +28,20 @@ jobs:
         run: ng build --configuration=production
 
       - name: Copy Files to Server
-        uses: perfectwork829/scp-action@dev
+        uses: appleboy/scp-action@dev
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
           source: "dist/3days_latest/*"
           target: "/home/public_html"
 
       - name: Restart Nginx
-        uses: perfectwork829/ssh-action@dev
+        uses: appleboy/ssh-action@dev
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.c }}
           script: sudo systemctl restart nginx
