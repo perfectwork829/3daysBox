@@ -27,9 +27,18 @@ jobs:
       - name: Build Angular Project
         run: ng build --configuration=production
 
+      - run: echo ${{ secrets.HOST }}
+      - run: echo ${{ secrets.USERNAME }}
+      - run: echo ${{ secrets.PASSWORD }}
+      - run: echo ${{ secrets.PORT }}
+
       - name: Copy Files to Server
         uses: appleboy/scp-action@v0.1.7
-        with:          
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
           source: "dist/3days_latest/*"
           target: "/home/public_html"
 
