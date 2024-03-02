@@ -27,13 +27,13 @@ jobs:
       - name: Build Angular Project
         run: ng build --configuration=production
 
-      - run: echo ${{ secrets.HOST }}
-      - run: echo ${{ secrets.USERNAME }}
-      - run: echo ${{ secrets.PASSWORD }}
-      - run: echo ${{ secrets.PORT }}
+      - run: echo secrets.HOST
+      - run: echo secrets.USERNAME
+      - run: echo secrets.PASSWORD
+      - run: echo secrets.PORT
 
       - name: Copy Files to Server
-        uses: appleboy/scp-action@v0.1.7
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
@@ -43,7 +43,7 @@ jobs:
           target: "/home/public_html"
 
       - name: Restart Nginx
-        uses: appleboy/ssh-action@v0.1.7
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
