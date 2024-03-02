@@ -33,9 +33,12 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+          port: 22
           script: |
             cd /home/public_html
             rm -rf *
+            chmod 755 dist/3days_latest -R
+            cp -r /dist/3days_latest/* .
 
       - name: Restart Nginx
         uses: appleboy/ssh-action@master
