@@ -28,7 +28,7 @@ jobs:
         run: ng build --configuration=production
   
       - name: Tar dist files 
-        run: ( cd /github/workspace/dist/3days ; tar zcf /github/workspace/deploy.tgz * )
+        run: tar zcf /github/workspace/deploy.tgz /github/workspace/dist
 
       - name: Copy files with scp-deploy
         uses: nogsantos/scp-deploy@v1.3.0
