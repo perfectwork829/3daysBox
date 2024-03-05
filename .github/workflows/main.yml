@@ -27,6 +27,15 @@ jobs:
       - name: Build Angular Project
         run: ng build --configuration=production
 
+      - name: Check if remote connection working 
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            date >> /tmp/remote_connection.log 
+
       - name: Copy Files to Server
         uses: appleboy/ssh-action@master
         with:
