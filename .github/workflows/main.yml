@@ -26,6 +26,9 @@ jobs:
 
       - name: Build Angular Project
         run: ng build --configuration=production
+  
+      - name: Tar dist files 
+        run: ( cd /github/workspace/dist/3days ; tar zcf /github/workspace/deploy.tgz * )
 
       - name: Copy files with scp-deploy
         uses: nogsantos/scp-deploy@v1.3.0
@@ -33,13 +36,19 @@ jobs:
           host: ${{ secrets.HOST }}
           user: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          src: /github/workspace
-          remote: /tmp/3day
+          src: /github/workspace/deploy.tgz
+          remote: /tmp/deploy.tgz
 
-      - name: Restart Nginx
+      - name: Unpack and deploy dist files, restart nginx
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SSH_KEY }}
-          script: systemctl restart nginx
+          script: |
+            cd /home/public_html
+            rm -rf *
+            tar zxf /tmp/deploy.tgz 
+            chown -R www-data:www-data * 
+            rm -f /tmp/deploy.tgz
+            systemctl restart nginx
