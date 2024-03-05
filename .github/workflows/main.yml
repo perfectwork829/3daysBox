@@ -33,6 +33,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
+          debug: true
           script: |
             date >> /tmp/remote_connection.log 
 
